@@ -6,6 +6,19 @@ var PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "homepage.html"));
+});
+
+app.get("/reservationForm.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservationForm.html"));
+});
+
+app.get("/reservationView.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservationView.html"));
+});
 
 let tables = [
     {
@@ -24,21 +37,7 @@ let tables = [
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+]
 
 
 app.listen(PORT, function () {
