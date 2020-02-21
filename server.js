@@ -36,13 +36,13 @@ let tables = [
         id: 5432,
         name: "John Smith",
         email: "Johnsmith@aol.com",
-        phone: 234-5123
+        phone: "234-5123"
     },
     {
         id: 5435,
         name: "Snow White",
         email: "Snowwhite@dwarf.com",
-        phone: 456-1029
+        phone: "456-1029"
 
 
     }

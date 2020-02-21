@@ -26,22 +26,21 @@
     <script type="text/javascript">
         $.get("/api/getTable", function (table) {
             console.log(table);
-            newTable = table;
-            // let newTable = JSON.stringify(table, null, 3)
-            if (newTable) {
-                $("#cardSpot").append(`<div class="card" style="width: 18rem;">
+            let newTable = table;
+            let i = 0;
+            for (let i = 0; i < table.length; i++){
+            $("#cardSpot").append(`<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${newTable[0].NameofTable}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">${newTable[0].NameofCust}</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">${newTable[i].name}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${newTable[i].email}</h6>
+    <p class="card-text">${newTable[i].phone}</p>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>`);
-
             }
         }
-    )
+        )
 
     </script>
 </body>
