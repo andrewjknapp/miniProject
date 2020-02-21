@@ -31,6 +31,11 @@ app.post("/api/addTable", function(req, res) {
     console.log(newRes);
   });
 
+app.post("/api/remove", function(req, res) {
+    let index = Number(req.body);
+    tables.splice(index,1);
+})
+
 let tables = [
     {
         id: 5432,
