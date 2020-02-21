@@ -33,18 +33,16 @@ app.post("/api/addTable", function(req, res) {
 
 let tables = [
     {
-        routeName: "Table1",
-        NameofTable: "Table 1",
-        NameofCust: "John Smith",
-        NumbofChair: 4,
-        custEmail: "Johnsmith@aol.com"
+        id: 5432,
+        name: "John Smith",
+        email: "Johnsmith@aol.com",
+        phone: 234-5123
     },
     {
-        routeName: "Table2",
-        NameofTable: "Table 2",
-        NameofCust: "Snow White",
-        NumbofChair: 7,
-        custEmail: "Snowwhite@dwarf.com"
+        id: 5435,
+        name: "Snow White",
+        email: "Snowwhite@dwarf.com",
+        phone: 456-1029
 
 
     }
