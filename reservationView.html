@@ -21,7 +21,9 @@
             <button>View Tables</button>
             <a href="reservationForm.html"><button id="reserveForm">Make a Reservation</button></a>
         </div>
-        <div id=cardSpot></div>
+        <div id=cardSpot><h2>Reservations</h2></div>
+        <hr>
+        <div id="waitlist"><h2>Waitlist</h2></div>
     </main>
     <script type="text/javascript">
         $.get("/api/getTable", function (table) {
@@ -29,15 +31,22 @@
             let newTable = table;
             let i = 0;
             for (let i = 0; i < table.length; i++){
-            $("#cardSpot").append(`<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">${newTable[i].name}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">${newTable[i].email}</h6>
-    <p class="card-text">${newTable[i].phone}</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>`);
+                let currentRes = `
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">${newTable[i].name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${newTable[i].email}</h6>
+                <p class="card-text">${newTable[i].phone}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>`
+            if(i < 5) {
+                $("#cardSpot").append(currentRes);
+            } else {
+                $('#waitlist').append(currentRes);
+            }
+            
             }
         }
         )
