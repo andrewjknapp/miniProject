@@ -20,6 +20,17 @@ app.get("/reservationView.html", function(req, res) {
     res.sendFile(path.join(__dirname, "reservationView.html"));
 });
 
+app.get("/api/getTable", function(req,res) {
+    console.log("Returned tables");
+    res.json(tables);
+})
+
+app.post("/api/addTable", function(req, res) {
+    let newRes = req.body;
+    tables.push(newRes);
+    console.log(newRes);
+  });
+
 let tables = [
     {
         routeName: "Table1",
