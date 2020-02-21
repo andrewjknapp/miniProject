@@ -15,6 +15,9 @@
         <main>
             <div> 
                 <form>
+                    ID: 
+                    <input type='text' placeholder='insert ID' class="phone" id="id"></input>
+                    <br>
                     Name:
                     <input type='text' placeholder='enter your name' class="name" id="name"></input>
                     <br>
@@ -32,11 +35,12 @@
         $("#reserveBtn").on("click", function(event){
             event.preventDefault();
             let = tablesData = {
+                id: $('#id').val(),
                 name: $("#name").val(),
                 email: $("#email").val(),
                 phone: $("#phone").val()
             }
-                console.log(tablesData);
+                
             $.post("/api/addTable", tablesData)
               .then(function(data){
                   console.log("reservationForm.html", data);
