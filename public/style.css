@@ -30,3 +30,7 @@ main div {
     margin: 5px auto;
     border-radius: 12px;
 }
+
+section h2 {
+    text-align: center;
+}
