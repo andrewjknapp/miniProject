@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: gainsboro;
+}
+
+header {
+    background-color: aquamarine;
+    text-align: center;
+    padding: 20px;
+}
+
+header div {
+    background-color: darkgrey;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    color: white;
+    border-radius: 12px;
+}
+
+main div {
+    background-color: darkgrey;
+    padding: 20px;
+    width: fit-content;
+    margin: 5px auto;
+    border-radius: 12px;
+}
